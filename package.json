@@ -1,0 +1,11 @@
+{
+  "name": "menuweb",
+  "private": true,
+  "workspaces": [
+    "web"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.0.2"
+  }
+}
