@@ -1,6 +1,9 @@
+import { useSite } from "../providers/SiteProvider";
+
 const Navigation = () => {
+  const { siteLinks = [] } = useSite();
   return (
-    <navigation className="py-6">
+    <nav className="py-6">
       <div className="container mx-auto px-4">
         <div className="flex justify-between">
           <div>
@@ -8,26 +11,16 @@ const Navigation = () => {
           </div>
           <div>
             <ul className="flex">
-              <li className="ml-4">
-                <a href="#">Come todo / buffete</a>
-              </li>
-              <li className="ml-4">
-                <a href="#">Menú a la carta</a>
-              </li>
-              <li className="ml-4">
-                <a href="#">Bebidas</a>
-              </li>
-              <li className="ml-4">
-                <a href="#">Promociones</a>
-              </li>
-              <li className="ml-4">
-                <a href="#">Postres</a>
-              </li>
+              {siteLinks.map((link, index) => (
+                <li key={`navigation-link-${index}`} className="ml-4">
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
-    </navigation>
+    </nav>
   );
 };
 

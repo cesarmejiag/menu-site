@@ -9,8 +9,16 @@ export const siteLinks = [
 ];
 
 export const socialLinks = [
-  { href: "https://www.instagram.com/lachidavida", label: "Instagram" },
-  { href: "https://www.facebook.com/chidachidavida", label: "Facebook" },
+  {
+    href: "https://www.instagram.com/lachidavida",
+    label: "Instagram",
+    icon: "/assets/images/icon-instagram.svg",
+  },
+  {
+    href: "https://www.facebook.com/chidachidavida",
+    label: "Facebook",
+    icon: "/assets/images/icon-facebook.svg",
+  },
 ];
 
 export const homePromos = [

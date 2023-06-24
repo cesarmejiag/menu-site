@@ -1,9 +1,7 @@
-import { useSite } from "../providers/SiteProvider";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
-  console.log(useSite);
   return (
     <>
       <Navigation />

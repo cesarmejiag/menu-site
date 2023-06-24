@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background-rgb: 0, 0, 0;
+  --foreground-rgb: 255, 255, 255;
+  --accent-rgb: 233 107 0;
+}
+
+html,
+body {
+  background-color: rgb(var(--background-rgb));
+  color: rgb(var(--foreground-rgb));
+}
