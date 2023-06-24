@@ -1,4 +1,3 @@
-import SiteProvider from "../providers/SiteProvider";
 import client from "@/client";
 
 import "../styles/globals.css";
@@ -19,11 +18,7 @@ const siteConfigQuery = `
 `;
 
 export default function App({ Component, pageProps }) {
-  return (
-    <SiteProvider>
-      <Component {...pageProps} />
-    </SiteProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 App.getInitialProps = async function ({ Component, ctx }) {

@@ -1,7 +1,7 @@
-import Head from "next/head";
 import PropTypes from "prop-types";
 import { LogoJsonLd } from "next-seo";
 import Navigation from "./Navigation";
+import LinksList from "./sections/LinkListSection";
 import Footer from "./Footer";
 
 const Layout = ({ config, children }) => {
@@ -16,8 +16,9 @@ const Layout = ({ config, children }) => {
 
   return (
     <>
-      <Navigation />
+      <Navigation title={title} navItems={mainNavigation} logo={logo} />
       <div className="container mx-auto px-4">{children}</div>
+      <LinksList links={mainNavigation} />
       <Footer text={footerText} />
       {logoUrl && url && <LogoJsonLd url={url} logo={logoUrl} />}
     </>

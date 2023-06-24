@@ -7,7 +7,7 @@ const Cta = ({ title, route, link }) => {
       <Link
         href={{ pathname: "/", query: { slug: route.slug.current } }}
         as={`/${route.slug.current}`}
-        legacy
+        legacyBehavior
       >
         <a>{title}</a>
       </Link>
