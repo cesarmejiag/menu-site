@@ -2,7 +2,7 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import useResize from "../hooks/useResize";
+import useResize from "../../hooks/useResize";
 
 import "swiper/css";
 import "swiper/css/navigation";

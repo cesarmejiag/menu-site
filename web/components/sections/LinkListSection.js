@@ -1,4 +1,4 @@
-import { useSite } from "../providers/SiteProvider";
+import { useSite } from "../../providers/SiteProvider";
 
 import styles from "../styles/LinkList.module.css";
 

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import PropTypes from "prop-types";
 import { useSite } from "../providers/SiteProvider";
+import BlockContent from "./BlockContent";
 
-const Footer = () => {
+const Footer = ({ text }) => {
   const { socialLinks = [] } = useSite();
   return (
     <footer className="py-6">
@@ -23,18 +24,16 @@ const Footer = () => {
           ))}
         </ul>
         {/* Rich Text */}
-        <div style={{ textAlign: "center" }}>
-          <p>
-            <a href="#">contacto@email.com</a>
-          </p>
-          <p>Calle Niños Heroes 9, Tultepec, Mexico, 54963</p>
-          <p>Todos los derechos reservados Chida Vida!</p>
+        <div>
+          <BlockContent blocks={text} />
         </div>
       </div>
     </footer>
   );
 };
 
-Footer.propTypes = {};
+Footer.propTypes = {
+  text: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default Footer;
