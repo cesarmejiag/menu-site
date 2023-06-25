@@ -1,6 +1,14 @@
 .linkList__anchor {
+  background-color: transparent;
   border: 1px solid rgb(var(--accent-rgb));
   display: block;
   color: rgb(var(--accent-rgb));
   text-align: center;
+  transition: background-color 375ms, color 375ms;
+}
+
+.linkList__anchor--active,
+.linkList__anchor:hover {
+  background-color: rgb(var(--accent-rgb));
+  color: #ffffff;
 }

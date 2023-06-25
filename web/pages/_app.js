@@ -10,9 +10,9 @@ const siteConfigQuery = `
       ...,
       "title": page->title
     },
-    footerNavigation[] -> {
+    socialLinks[] {
       ...,
-      "title": page->title
+      "icon": icon.asset->url
     }
   }[0]
 `;

@@ -21,7 +21,10 @@ const LinkList = ({ links, router }) => {
                 as={`/${slug.current}`}
                 legacyBehavior
               >
-                <a className={`${styles.linkList__anchor} p-2 text-lg`}>
+                <a
+                  data-is-active={isActive ? true : false}
+                  className={`${styles.linkList__anchor} p-2 text-lg`}
+                >
                   {title}
                 </a>
               </Link>

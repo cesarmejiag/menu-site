@@ -3,6 +3,7 @@ import { LogoJsonLd } from "next-seo";
 import Navigation from "./Navigation";
 import LinksList from "./sections/LinkListSection";
 import Footer from "./Footer";
+import Section from "./Section";
 
 const Layout = ({ config, children }) => {
   if (!config) {
@@ -10,16 +11,20 @@ const Layout = ({ config, children }) => {
     return <div>Missing config</div>;
   }
 
-  const { title, mainNavigation, footerNavigation, footerText, logo, url } =
+  const { title, mainNavigation, socialLinks, footerText, logo, url } =
     config;
   const logoUrl = logo && logo.asset && logo.asset.url;
 
   return (
     <>
       <Navigation title={title} navItems={mainNavigation} logo={logo} />
-      <div className="container mx-auto px-4">{children}</div>
-      <LinksList links={mainNavigation} />
-      <Footer text={footerText} />
+      <div className="container mx-auto px-4">
+        {children}
+        <Section>
+          <LinksList links={mainNavigation} />
+        </Section>
+      </div>
+      <Footer text={footerText} socialLinks={socialLinks} />
       {logoUrl && url && <LogoJsonLd url={url} logo={logoUrl} />}
     </>
   );

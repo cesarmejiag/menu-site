@@ -10,11 +10,11 @@ import figure from './objects/figure'
 import internalLink from './objects/internalLink'
 import link from './objects/link'
 import portableText from './objects/portableText'
+import socialLink from './objects/socialLink'
 
 // Landing page sections
 import imageSection from './objects/imageSection'
 import textSection from './objects/textSection'
-
 
 export const schemaTypes = [
   cta,
@@ -24,6 +24,7 @@ export const schemaTypes = [
   internalLink,
   link,
   portableText,
+  socialLink,
   route,
   page,
   siteConfig,

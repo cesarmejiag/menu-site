@@ -67,20 +67,12 @@ export default {
       ],
     },
     {
-      title: 'Footer navigation items',
-      name: 'footerNavigation',
+      title: 'Social Links',
+      name: 'socialLinks',
       type: 'array',
-      validation: (Rule) => [
-        Rule.max(10).warning('Are you sure you want more than 10 items?'),
-        Rule.unique().error('You have duplicate menu items'),
-      ],
+      validation: (Rule) => [Rule.max(5).warning('Are you sure you want more than 10 items?')],
       fieldset: 'footer',
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'route'}],
-        },
-      ],
+      of: [{type: 'socialLink'}],
     },
     {
       name: 'footerText',
