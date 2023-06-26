@@ -2,5 +2,5 @@ export default {
   title: 'Portable Text',
   name: 'portableText',
   type: 'array',
-  of: [{type: 'block'}, {type: 'figure'}, {type: 'embedHTML'}],
+  of: [{type: 'block'}, {type: 'figure'}],
 }

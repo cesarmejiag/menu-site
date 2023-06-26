@@ -30,7 +30,7 @@ const Navigation = ({ title = "Missing title", navItems, router, logo }) => {
 
   return (
     <nav className="py-6">
-      <div className="container mx-auto px-4">
+      <div className="holder mx-auto px-4">
         <div className="flex justify-between">
           <div>
             <Link

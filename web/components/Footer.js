@@ -5,7 +5,7 @@ import BlockContent from "./BlockContent";
 const Footer = ({ text, socialLinks }) => {
   return (
     <footer className="py-6">
-      <div className="container mx-auto px-4">
+      <div className="holder mx-auto px-4">
         {/* Social */}
         <ul className="flex justify-center mb-4">
           {socialLinks &&

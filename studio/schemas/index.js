@@ -13,6 +13,8 @@ import portableText from './objects/portableText'
 import socialLink from './objects/socialLink'
 
 // Landing page sections
+import hero from './objects/hero'
+import carousel from './objects/carousel'
 import imageSection from './objects/imageSection'
 import textSection from './objects/textSection'
 
@@ -20,6 +22,8 @@ export const schemaTypes = [
   cta,
   embedHTML,
   figure,
+  hero,
+  carousel,
   imageSection,
   internalLink,
   link,

@@ -25,6 +25,9 @@ export default {
     select: {
       html: 'html',
     },
-    component: HTMLpreview,
+    // component: HTMLpreview,
+  },
+  components: {
+    preview: HTMLpreview,
   },
 }

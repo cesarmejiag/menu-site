@@ -11,14 +11,13 @@ const Layout = ({ config, children }) => {
     return <div>Missing config</div>;
   }
 
-  const { title, mainNavigation, socialLinks, footerText, logo, url } =
-    config;
+  const { title, mainNavigation, socialLinks, footerText, logo, url } = config;
   const logoUrl = logo && logo.asset && logo.asset.url;
 
   return (
     <>
       <Navigation title={title} navItems={mainNavigation} logo={logo} />
-      <div className="container mx-auto px-4">
+      <div className="holder mx-auto px-4">
         {children}
         <Section>
           <LinksList links={mainNavigation} />

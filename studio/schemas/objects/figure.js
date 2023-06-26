@@ -10,18 +10,12 @@ export default {
       title: 'Caption',
       name: 'caption',
       type: 'string',
-      options: {
-        isHighlighted: true,
-      },
     },
     {
       name: 'alt',
       type: 'string',
       title: 'Alternative text',
       description: 'Important for SEO and accessibility.',
-      options: {
-        isHighlighted: true,
-      },
     },
   ],
   preview: {

@@ -1,21 +1,18 @@
 import PropTypes from "prop-types";
 import BlockContent from "../BlockContent";
+import Section from "../Section";
 
-const TextSection = ({ heading, label, text }) => {
+const TextSection = ({ heading, intro, text }) => {
   return (
-    <div>
-      <section>
-        <div>{label}</div>
-        <div>{heading}</div>
-        <BlockContent blocks={text} />
-      </section>
-    </div>
+    <Section heading={heading} intro={intro}>
+      {text && <BlockContent blocks={text} />}
+    </Section>
   );
 };
 
 TextSection.propTypes = {
   heading: PropTypes.string,
-  label: PropTypes.string,
+  intro: PropTypes.string,
   text: PropTypes.arrayOf(PropTypes.object),
 };
 
