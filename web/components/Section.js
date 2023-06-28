@@ -8,7 +8,7 @@ const Section = ({ heading, intro, children }) => {
       {(heading || intro) && (
         <div className={`mb-6 ${styles.heading}`}>
           {heading && <h1 className="text-5xl mb-4">{heading}</h1>}
-          {intro && <h3 className="text-lg">{intro}</h3>}
+          {intro && <h3 className="text-lg/6">{intro}</h3>}
         </div>
       )}
       {/* Main */}
