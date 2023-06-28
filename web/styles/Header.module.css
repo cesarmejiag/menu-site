@@ -1,0 +1,61 @@
+.logo {
+  text-decoration: none;
+}
+
+.navigation {
+  background: rgba(0, 0, 0, 0.95);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 112px;
+  transform: translateX(100%);
+  transition: transform 375ms;
+  width: 100%;
+  z-index: 999;
+}
+
+.navigation--active {
+  transform: translateX(0);
+}
+
+.navigation a {
+  display: block;
+  padding: 1rem 1rem;
+  text-align: right;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    background: transparent;
+    height: auto;
+    position: static;
+    transform: none;
+    transition: none;
+    width: auto;
+  }
+
+  .navigation a {
+    padding: 0;
+  }
+}
+
+.toggleMenu {
+  height: 35px;
+  width: 35px;
+}
+
+.toggleMenu svg {
+  height: inherit;
+  width: inherit;
+}
+
+.toggleMenu svg line {
+  stroke: #ffffff;
+  transition: stroke 375ms;
+}
+
+.toggleMenu--active svg line,
+.toggleMenu:hover svg line {
+  stroke: rgb(var(--accent-rgb));
+}

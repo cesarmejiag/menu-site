@@ -4,6 +4,7 @@
   display: block;
   color: rgb(var(--accent-rgb));
   text-align: center;
+  text-decoration: none;
   transition: background-color 375ms, color 375ms;
 }
 

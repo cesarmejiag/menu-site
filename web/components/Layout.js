@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { LogoJsonLd } from "next-seo";
-import Navigation from "./Navigation";
+import Header from "./Header";
 import LinksList from "./sections/LinkListSection";
 import Footer from "./Footer";
 import Section from "./Section";
@@ -16,7 +16,7 @@ const Layout = ({ config, children }) => {
 
   return (
     <>
-      <Navigation title={title} navItems={mainNavigation} logo={logo} />
+      <Header title={title} navItems={mainNavigation} logo={logo} />
       <div className="holder mx-auto px-4">
         {children}
         <Section>

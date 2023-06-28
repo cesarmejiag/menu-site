@@ -5,7 +5,7 @@
 :root {
   --background-rgb: 0, 0, 0;
   --foreground-rgb: 255, 255, 255;
-  --accent-rgb: 233 107 0;
+  --accent-rgb: 255 0 25;
 }
 
 html,
@@ -16,4 +16,14 @@ body {
 
 .holder {
   max-width: 1024px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: underline;
+  transition: color 375ms;
+}
+
+a:hover {
+  color: rgb(var(--accent-rgb));
 }
