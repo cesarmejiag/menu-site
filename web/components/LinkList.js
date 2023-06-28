@@ -2,6 +2,7 @@ import Link from "next/link";
 import { withRouter } from "next/router";
 import PropTypes from "prop-types";
 
+import { ramyoon } from "@/styles/fonts/fonts";
 import styles from "@/styles/LinkList.module.css";
 
 const LinkList = ({ links, router }) => {
@@ -23,7 +24,7 @@ const LinkList = ({ links, router }) => {
               >
                 <a
                   data-is-active={isActive ? true : false}
-                  className={`${styles.linkList__anchor} p-2 text-lg`}
+                  className={`${styles.linkList__anchor} p-2 text-xl ${ramyoon.className}`}
                 >
                   {title}
                 </a>

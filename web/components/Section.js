@@ -1,17 +1,18 @@
+import { ramyoon } from "@/styles/fonts/fonts";
+import styles from "./../styles/Section.module.css";
+
 const Section = ({ heading, intro, children }) => {
   return (
-    <section className="py-6">
+    <section className={`py-6 ${ramyoon.variable}`}>
       {/* Heading */}
       {(heading || intro) && (
-        <div className="mb-6">
-          {heading && (
-            <h1 className="font-bold text-4xl text-center mb-4">{heading}</h1>
-          )}
-          {intro && <h3 className="text-lg text-center">{intro}</h3>}
+        <div className={`mb-6 ${styles.heading}`}>
+          {heading && <h1 className="text-5xl mb-4">{heading}</h1>}
+          {intro && <h3 className="text-lg">{intro}</h3>}
         </div>
       )}
       {/* Main */}
-      <div>{children}</div>
+      <div className={styles.body}>{children}</div>
     </section>
   );
 };

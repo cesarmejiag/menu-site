@@ -36,5 +36,5 @@ App.getInitialProps = async function ({ Component, ctx }) {
   if (config && pageProps) {
     pageProps.config = config;
   }
-  return { pageProps  };
+  return { pageProps };
 };

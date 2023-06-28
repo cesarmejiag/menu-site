@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { LogoJsonLd } from "next-seo";
 import Header from "./Header";
-import LinksList from "./sections/LinkListSection";
+import LinksList from "./LinkList";
 import Footer from "./Footer";
 import Section from "./Section";
 

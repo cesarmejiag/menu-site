@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import SVG from "react-inlinesvg";
 
+import { ramyoon } from "@/styles/fonts/fonts";
 import styles from "./../styles/Header.module.css";
 
 const renderLogo = (logo) => {
@@ -31,7 +32,7 @@ const Header = ({ title = "Missing title", navItems, router, logo }) => {
   }, []);
 
   return (
-    <header className="py-6">
+    <header className={`py-6 ${ramyoon.variable}`}>
       <div className="holder mx-auto px-4">
         <div className="h-16 flex justify-between items-center">
           <Link
@@ -42,7 +43,7 @@ const Header = ({ title = "Missing title", navItems, router, logo }) => {
             as="/"
             legacyBehavior
           >
-            <a className={`${styles.logo} text-2xl font-bold`} title={title}>
+            <a className={`${styles.logo} text-4xl`} title={title}>
               {logo?.asset ? renderLogo(logo, title) : title}
             </a>
           </Link>
@@ -69,7 +70,7 @@ const Header = ({ title = "Missing title", navItems, router, logo }) => {
                           legacyBehavior
                         >
                           <a
-                            className="text-2xl md:text-base"
+                            className={`text-2xl md:text-xl`}
                             data-is-active={isActive ? "true" : false}
                           >
                             {title}
