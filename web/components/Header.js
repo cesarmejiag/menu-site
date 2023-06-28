@@ -24,6 +24,16 @@ const Header = ({ title = "Missing title", navItems, router, logo }) => {
     setShowNav(!showNav);
   };
 
+  // Disable scroll if showNav is true
+  // TODO: This should be a variable in a context.
+  useEffect(() => {
+    if (showNav) {
+      document.body.classList.add('navActive');
+    } else {
+      document.body.classList.remove('navActive');
+    }
+  }, [showNav]);
+
   useEffect(() => {
     router.events.on("routeChangeComplete", hideMenu);
     return () => {
