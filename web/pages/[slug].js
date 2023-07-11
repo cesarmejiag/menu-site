@@ -1,29 +1,8 @@
 import PropTypes from "prop-types";
 import { NextSeo } from "next-seo";
-import imageUrlBuilder from "@sanity/image-url";
-import client from "@/client";
+import { getPage, urlFor } from "@/lib/api";
 import Layout from "@/components/Layout";
 import RenderSections from "@/components/RenderSections";
-
-const builder = imageUrlBuilder(client);
-const pageQuery = `
-  *[_type == "route" && slug.current == $slug][0] {
-    page-> {
-      ...,
-      content[] {
-        ...,
-        cta {
-          ...,
-          route->
-        },
-        ctas[] {
-          ...,
-          route->
-        }
-      }
-    }
-  }
-`;
 
 export default function Internal({
   title,
@@ -37,21 +16,21 @@ export default function Internal({
   const openGraphImages = openGraphImage
     ? [
         {
-          url: builder.image(openGraphImage).width(800).height(600).url(),
+          url: urlFor(openGraphImage).width(800).height(600).url(),
           width: 800,
           height: 600,
           alt: title,
         },
         // Facebook recommended size
         {
-          url: builder.image(openGraphImage).width(1200).height(630).url(),
+          url: urlFor(openGraphImage).width(1200).height(630).url(),
           width: 1200,
           height: 630,
           alt: title,
         },
         // Square 1:1
         {
-          url: builder.image(openGraphImage).width(600).height(600).url(),
+          url: urlFor(openGraphImage).width(600).height(600).url(),
           width: 600,
           height: 600,
           alt: title,
@@ -80,7 +59,7 @@ Internal.getInitialProps = async function ({ query }) {
     console.error("no query");
     return;
   }
-  const res = await client.fetch(pageQuery, { slug });
+  const res = await getPage(slug);
   return { ...res.page, slug };
 };
 

@@ -17,7 +17,7 @@ const Layout = ({ config, children }) => {
   return (
     <>
       <Header title={title} navItems={mainNavigation} logo={logo} />
-      <div className="holder mx-auto px-4">
+      <div>
         {children}
         <Section>
           <LinksList links={mainNavigation} />

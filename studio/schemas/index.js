@@ -17,6 +17,8 @@ import hero from './objects/hero'
 import carousel from './objects/carousel'
 import imageSection from './objects/imageSection'
 import textSection from './objects/textSection'
+import sidesSection from './objects/sidesSection'
+import videoSection from './objects/videoSection'
 
 export const schemaTypes = [
   cta,
@@ -33,4 +35,6 @@ export const schemaTypes = [
   page,
   siteConfig,
   textSection,
+  sidesSection,
+  videoSection
 ]

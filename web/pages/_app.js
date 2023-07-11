@@ -1,21 +1,5 @@
-import client from "@/client";
-
+import { getGlobalConfig } from "@/lib/api";
 import "../styles/globals.css";
-
-const siteConfigQuery = `
-  *[_id == "global-config"] {
-    ...,
-    logo {asset->{extension, url}},
-    mainNavigation[] -> {
-      ...,
-      "title": page->title
-    },
-    socialLinks[] {
-      ...,
-      "icon": icon.asset->url
-    }
-  }[0]
-`;
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
@@ -29,7 +13,7 @@ App.getInitialProps = async function ({ Component, ctx }) {
   }
 
   // Add site config from sanity.
-  const config = await client.fetch(siteConfigQuery);
+  const config = await getGlobalConfig();
   if (!config) {
     return { pageProps };
   }

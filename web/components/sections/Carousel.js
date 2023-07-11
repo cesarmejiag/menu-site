@@ -1,15 +1,11 @@
 import PropTypes from "prop-types";
-import imageUrlBuilder from "@sanity/image-url";
-import { Autoplay, Navigation } from "swiper";
+import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import client from "@/client";
+import { urlFor } from "@/lib/api";
 import Section from "../Section";
-// import useResize from "../../hooks/useResize";
 
 import "swiper/css";
 import "swiper/css/navigation";
-
-const builder = imageUrlBuilder(client);
 
 const Carousel = ({ images, autoplay, delay, slidesPerView, spaceBetween }) => {
   return (
@@ -24,7 +20,7 @@ const Carousel = ({ images, autoplay, delay, slidesPerView, spaceBetween }) => {
           const { _key, alt } = image;
           return (
             <SwiperSlide key={_key}>
-              <img src={builder.image(image)} alt={alt} />
+              <img src={urlFor(image)} alt={alt} />
             </SwiperSlide>
           );
         })}

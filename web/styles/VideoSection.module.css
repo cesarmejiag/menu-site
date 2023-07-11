@@ -1,0 +1,78 @@
+.content {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.content::after {
+  background-color: rgba(0, 0, 0, 0.35);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.video {
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.main {
+  left: 50%;
+  max-width: 36rem;
+  padding: 1.5rem;
+  position: absolute;
+  text-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+}
+
+.main h1 {
+  font-size: 4.5rem;
+}
+.main h2 {
+  font-size: 2.75rem;
+}
+.main h3 {
+  font-size: 2.5rem;
+}
+.main h4 {
+  font-size: 2.25rem;
+}
+.main h5 {
+  font-size: 2rem;
+}
+.main h6 {
+  font-size: 1.75rem;
+}
+
+@media (max-width: 640px) {
+  .main h1 {
+    font-size: 3rem;
+  }
+  .main h2 {
+    font-size: 2.75rem;
+  }
+  .main h3 {
+    font-size: 2.5rem;
+  }
+  .main h4 {
+    font-size: 2rem;
+  }
+  .main h5 {
+    font-size: 2rem;
+  }
+  .main h6 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,53 @@
+.imageSection {
+  padding: 4rem 0 0;
+
+  @media (max-width: 640px) {
+    padding: 2rem 0 0;
+  }
+}
+
+.content {
+  margin: 0 auto;
+  /* max-width: 60em; */
+  padding-top: 2rem;
+  position: relative;
+}
+
+.figcaption {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  @media (max-width: 640px) {
+    position: static;
+    top: auto;
+  }
+}
+
+.caption {
+  margin: 0 auto;
+  max-width: 37rem;
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+}
+
+.captionBox {
+  background-color: rgb(var(--accent-rgb));
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .25);
+  padding: 1.5rem;
+  max-width: 25rem;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 640px) {
+    max-width: none;
+  }
+}
+
+.label {
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+
+.label + .title {
+  margin-top: 0.2em;
+}

@@ -34,6 +34,26 @@ a {
   transition: color 375ms;
 }
 
-a:hover {
+a:hover,
+a.active {
   color: rgb(var(--accent-rgb));
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid rgb(var(--accent-rgb));
+  display: block;
+  color: rgb(var(--accent-rgb));
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 375ms, color 375ms;
+}
+
+.button:hover,
+.button--active {
+  background-color: rgb(var(--accent-rgb));
+  color: #ffffff;
 }

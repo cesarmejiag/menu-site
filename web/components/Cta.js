@@ -1,24 +1,32 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 
+import { ramyoon } from "@/styles/fonts/fonts";
+
 const Cta = ({ title, route, link }) => {
+  const anchorClasses = `button button--active ${ramyoon.className}`;
+
   if (route?.slug?.current) {
     return (
       <Link
-        href={{ pathname: "/", query: { slug: route.slug.current } }}
+        href={{ pathname: "/[slug]", query: { slug: route.slug.current } }}
         as={`/${route.slug.current}`}
         legacyBehavior
       >
-        <a>{title}</a>
+        <a className={anchorClasses}>{title}</a>
       </Link>
     );
   }
 
   if (link) {
-    return <a href={link}>{title}</a>;
+    return (
+      <a className={anchorClasses} href={link}>
+        {title}
+      </a>
+    );
   }
 
-  return <a>{title}</a>;
+  return <a className={anchorClasses}>{title}</a>;
 };
 
 Cta.propTypes = {

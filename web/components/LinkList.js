@@ -3,7 +3,6 @@ import { withRouter } from "next/router";
 import PropTypes from "prop-types";
 
 import { ramyoon } from "@/styles/fonts/fonts";
-import styles from "@/styles/LinkList.module.css";
 
 const LinkList = ({ links, router }) => {
   return (
@@ -11,7 +10,8 @@ const LinkList = ({ links, router }) => {
       {links &&
         links.map(({ slug, title, _id }) => {
           const isActive =
-            router.pathname === "/" && router.query.slug === slug.current;
+            router.pathname === "/[slug]" && router.query.slug === slug.current;
+          const activeClass = isActive ? "button--active" : "";
           return (
             <li key={_id} className="mb-2">
               <Link
@@ -23,8 +23,8 @@ const LinkList = ({ links, router }) => {
                 legacyBehavior
               >
                 <a
-                  data-is-active={isActive ? true : false}
-                  className={`${styles.linkList__anchor} p-2 text-xl ${ramyoon.className}`}
+                  data-is-active={isActive}
+                  className={`button ${ramyoon.className} ${activeClass}`}
                 >
                   {title}
                 </a>

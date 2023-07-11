@@ -1,29 +1,8 @@
 import PropTypes from "prop-types";
 import { NextSeo } from "next-seo";
-import imageUrlBuilder from "@sanity/image-url";
-import client from "@/client";
 import Layout from "@/components/Layout";
 import RenderSections from "@/components/RenderSections";
-
-const builder = imageUrlBuilder(client);
-const pageQuery = `
-  *[_id == "global-config"][0] {
-    frontpage -> {
-      ...,
-      content[] {
-        ...,
-        cta {
-          ...,
-          route->
-        },
-        ctas[] {
-          ...,
-          route->
-        }
-      }
-    }
-  }
-`;
+import { getPage, urlFor } from "@/lib/api";
 
 export default function Home({
   title,
@@ -37,21 +16,21 @@ export default function Home({
   const openGraphImages = openGraphImage
     ? [
         {
-          url: builder.image(openGraphImage).width(800).height(600).url(),
+          url: urlFor(openGraphImage).width(800).height(600).url(),
           width: 800,
           height: 600,
           alt: title,
         },
         // Facebook recommended size
         {
-          url: builder.image(openGraphImage).width(1200).height(630).url(),
+          url: urlFor(openGraphImage).width(1200).height(630).url(),
           width: 1200,
           height: 630,
           alt: title,
         },
         // Square 1:1
         {
-          url: builder.image(openGraphImage).width(600).height(600).url(),
+          url: urlFor(openGraphImage).width(600).height(600).url(),
           width: 600,
           height: 600,
           alt: title,
@@ -75,7 +54,7 @@ export default function Home({
 }
 
 Home.getInitialProps = async function () {
-  const res = await client.fetch(pageQuery);
+  const res = await getPage();
   return { ...res.frontpage, slug: "/" };
 };
 

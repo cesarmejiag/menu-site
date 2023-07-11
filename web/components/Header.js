@@ -28,9 +28,9 @@ const Header = ({ title = "Missing title", navItems, router, logo }) => {
   // TODO: This should be a variable in a context.
   useEffect(() => {
     if (showNav) {
-      document.body.classList.add('navActive');
+      document.body.classList.add("navActive");
     } else {
-      document.body.classList.remove('navActive');
+      document.body.classList.remove("navActive");
     }
   }, [showNav]);
 
@@ -47,7 +47,7 @@ const Header = ({ title = "Missing title", navItems, router, logo }) => {
         <div className="h-16 flex justify-between items-center">
           <Link
             href={{
-              pathname: "index",
+              pathname: "/",
               query: { slug: "/" },
             }}
             as="/"
@@ -67,21 +67,22 @@ const Header = ({ title = "Missing title", navItems, router, logo }) => {
                 {navItems &&
                   navItems.map(({ slug, title, _id }) => {
                     const isActive =
-                      router.pathname === "/" &&
+                      router.pathname === "/[slug]" &&
                       router.query.slug === slug.current;
+                    const activeClass = isActive ? " active" : "";
                     return (
                       <li key={_id} className="md:ml-4">
                         <Link
                           href={{
-                            pathname: "index",
+                            pathname: "/[slug]",
                             query: { slug: slug.current },
                           }}
                           as={`/${slug.current}`}
                           legacyBehavior
                         >
                           <a
-                            className={`text-2xl md:text-xl`}
-                            data-is-active={isActive ? "true" : false}
+                            className={`text-2xl md:text-xl ${activeClass}`}
+                            data-is-active={isActive}
                           >
                             {title}
                           </a>

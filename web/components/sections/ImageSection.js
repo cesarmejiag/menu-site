@@ -1,34 +1,37 @@
 import PropTypes from "prop-types";
-import imageUrlBuilder from "@sanity/image-url";
-import client from "@/client";
 import BlockContent from "../BlockContent";
+import { urlFor } from "@/lib/api";
 import Cta from "../Cta";
+import Section from "../Section";
 
-const builder = imageUrlBuilder(client);
+import styles from "../../styles/ImageSection.module.css";
 
 const ImageSection = ({ heading, label, text, image, cta }) => {
   if (!image) {
     return null;
   }
   return (
-    <div>
-      <figure>
-        <img
-          src={builder.image(image).auto("format").width(2000).url()}
-          alt={heading}
-        />
-        <figcaption>
-          <div>
-            <div>
-              <div>{label}</div>
-              <h2>{heading}</h2>
-              {text && <BlockContent blocks={text} />}
-              {cta && cta.route && <Cta {...cta} />}
+    <Section>
+      <div className={styles.imageSection}>
+        <figure className={styles.content}>
+          <img
+            src={urlFor(image).auto("format").width(2000).url()}
+            className={styles.image}
+            alt={heading}
+          />
+          <figcaption className={styles.figcaption}>
+            <div className={styles.caption}>
+              <div className={styles.captionBox}>
+                <div className={`text-xs ${styles.label}`}>{label}</div>
+                <h2 className={`text-2xl ${styles.title}`}>{heading}</h2>
+                {text && <BlockContent blocks={text} />}
+                {cta && cta.route && <Cta {...cta} />}
+              </div>
             </div>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
+          </figcaption>
+        </figure>
+      </div>
+    </Section>
   );
 };
 

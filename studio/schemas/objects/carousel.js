@@ -13,23 +13,7 @@ export default {
       name: 'images',
       type: 'array',
       title: 'Images',
-      of: [
-        {
-          type: 'image',
-          name: 'image',
-          title: 'Image',
-          fields: [
-            {
-              type: 'text',
-              name: 'alt',
-              title: 'Alternative text',
-            },
-          ],
-          options: {
-            hotspot: true,
-          },
-        },
-      ],
+      of: [{type: 'figure'}],
     },
     {
       name: 'autoplay',
