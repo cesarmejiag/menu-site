@@ -16,7 +16,7 @@ const Carousel = ({ images, autoplay, delay, slidesPerView, spaceBetween }) => {
         spaceBetween={spaceBetween}
         navigation
       >
-        {images.map((image) => {
+        {images && images.map((image) => {
           const { _key, alt } = image;
           return (
             <SwiperSlide key={_key}>
